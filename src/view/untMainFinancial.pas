@@ -12,6 +12,8 @@ type
     Cadastro1: TMenuItem;
     Relatrios1: TMenuItem;
     Ajuda1: TMenuItem;
+    CadastroPadro1: TMenuItem;
+    procedure CadastroPadro1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,7 +25,17 @@ var
 
 implementation
 
+uses
+  untCadastroPadrao;
+
 {$R *.dfm}
 
+
+procedure TfrmMainPrincipal.CadastroPadro1Click(Sender: TObject);
+begin
+
+  formCadastro.show;
+  //formCadastro.pnlPrincipal.activeCard := CardPesquisa;
+end;
 
 end.
