@@ -1,9 +1,9 @@
-object Form1: TForm1
+object formCadastro: TformCadastro
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 372
-  ClientWidth = 652
+  Caption = 'formCadastro'
+  ClientHeight = 455
+  ClientWidth = 795
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,34 +16,30 @@ object Form1: TForm1
   object pnlPrincipal: TCardPanel
     Left = 0
     Top = 0
-    Width = 652
-    Height = 372
+    Width = 795
+    Height = 455
     Align = alClient
     ActiveCard = CardCadastro
     Caption = 'pnlPrincipal'
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 300
-    ExplicitHeight = 200
+    ExplicitWidth = 652
+    ExplicitHeight = 372
     object CardCadastro: TCard
       Left = 1
       Top = 1
-      Width = 650
-      Height = 370
+      Width = 793
+      Height = 453
       Caption = 'CardCadastro'
       CardIndex = 0
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 185
-      ExplicitHeight = 41
+      ExplicitWidth = 650
+      ExplicitHeight = 370
     end
     object CardPesquisa: TCard
       Left = 1
       Top = 1
-      Width = 650
-      Height = 370
+      Width = 793
+      Height = 453
       Caption = 'CardPesquisa'
       CardIndex = 1
       TabOrder = 1

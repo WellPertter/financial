@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXPanels, Vcl.ExtCtrls;
 
 type
-  TForm1 = class(TForm)
+  TformCadastro = class(TForm)
     pnlPrincipal: TCardPanel;
     CardCadastro: TCard;
     CardPesquisa: TCard;
@@ -18,7 +18,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  formCadastro: TformCadastro;
 
 implementation
 
