@@ -26,8 +26,6 @@ object formCadastro: TformCadastro
     ActiveCard = CardPesquisa
     Caption = 'pnlPrincipal'
     TabOrder = 0
-    ExplicitWidth = 795
-    ExplicitHeight = 455
     object CardCadastro: TCard
       Left = 1
       Top = 1
@@ -36,8 +34,6 @@ object formCadastro: TformCadastro
       Caption = 'CardCadastro'
       CardIndex = 0
       TabOrder = 0
-      ExplicitWidth = 793
-      ExplicitHeight = 453
       object Panel1: TPanel
         Left = 0
         Top = 387
@@ -45,8 +41,6 @@ object formCadastro: TformCadastro
         Height = 76
         Align = alBottom
         TabOrder = 0
-        ExplicitTop = 383
-        ExplicitWidth = 793
         object Button1: TButton
           Left = 701
           Top = 1
@@ -66,7 +60,6 @@ object formCadastro: TformCadastro
           ParentFont = False
           TabOrder = 0
           OnClick = Button1Click
-          ExplicitLeft = 691
         end
         object Button5: TButton
           Left = 600
@@ -87,7 +80,6 @@ object formCadastro: TformCadastro
           ParentFont = False
           TabOrder = 1
           OnClick = Button5Click
-          ExplicitLeft = 0
         end
       end
     end
@@ -99,8 +91,6 @@ object formCadastro: TformCadastro
       Caption = 'CardPesquisa'
       CardIndex = 1
       TabOrder = 1
-      ExplicitWidth = 793
-      ExplicitHeight = 453
       object pnlPesquisa: TPanel
         Left = 0
         Top = 0
@@ -109,8 +99,6 @@ object formCadastro: TformCadastro
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitTop = -5
-        ExplicitWidth = 793
         object Label1: TLabel
           Left = 14
           Top = 14
@@ -155,9 +143,6 @@ object formCadastro: TformCadastro
           Images = ImageList1
           ParentFont = False
           TabOrder = 1
-          ExplicitLeft = 692
-          ExplicitTop = 14
-          ExplicitHeight = 59
         end
       end
       object pnlButtom: TPanel
@@ -167,8 +152,6 @@ object formCadastro: TformCadastro
         Height = 76
         Align = alBottom
         TabOrder = 1
-        ExplicitTop = 383
-        ExplicitWidth = 793
         object btnSair: TButton
           Left = 701
           Top = 1
@@ -188,8 +171,6 @@ object formCadastro: TformCadastro
           ParentFont = False
           TabOrder = 0
           OnClick = btnSairClick
-          ExplicitLeft = 737
-          ExplicitTop = 5
         end
         object btnImprimir: TButton
           Left = 304
@@ -209,9 +190,6 @@ object formCadastro: TformCadastro
           Images = ImageList1
           ParentFont = False
           TabOrder = 1
-          ExplicitLeft = 692
-          ExplicitTop = 14
-          ExplicitHeight = 59
         end
         object btnExcluir: TButton
           Left = 203
@@ -231,9 +209,6 @@ object formCadastro: TformCadastro
           Images = ImageList1
           ParentFont = False
           TabOrder = 2
-          ExplicitLeft = 692
-          ExplicitTop = 14
-          ExplicitHeight = 59
         end
         object btnAdicionar: TButton
           Left = 1
@@ -254,7 +229,6 @@ object formCadastro: TformCadastro
           ParentFont = False
           TabOrder = 3
           OnClick = btnAdicionarClick
-          ExplicitLeft = -26
         end
         object btnAlterar: TButton
           Left = 102
@@ -275,8 +249,6 @@ object formCadastro: TformCadastro
           ParentFont = False
           TabOrder = 4
           OnClick = btnAlterarClick
-          ExplicitLeft = 91
-          ExplicitTop = -7
         end
       end
       object pnlMain: TPanel
@@ -287,9 +259,6 @@ object formCadastro: TformCadastro
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 2
-        ExplicitTop = 89
-        ExplicitWidth = 793
-        ExplicitHeight = 288
         object DBGrid1: TDBGrid
           Left = 0
           Top = 0

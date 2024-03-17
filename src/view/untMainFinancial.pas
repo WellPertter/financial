@@ -14,6 +14,7 @@ type
     Ajuda1: TMenuItem;
     CadastroPadro1: TMenuItem;
     procedure CadastroPadro1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,7 +27,7 @@ var
 implementation
 
 uses
-  untCadastroPadrao;
+  untCadastroPadrao, untSplash;
 
 {$R *.dfm}
 
@@ -36,6 +37,18 @@ begin
 
   formCadastro.show;
   //formCadastro.pnlPrincipal.activeCard := CardPesquisa;
+end;
+
+procedure TfrmMainPrincipal.FormCreate(Sender: TObject);
+begin
+
+  // Sistema para login. deixando obrigatório a tela.
+  formSplash := TformSplash.Create(nil);
+  try
+    formSplash.ShowModal;
+  finally
+    FreeAndNil(formSplash);     // Limpar e deixa nulo
+  end;
 end;
 
 end.
