@@ -11,15 +11,18 @@ type
   TformSplash = class(TForm)
     pnlPesquisa: TPanel;
     imgLogin: TImage;
-    Label1: TLabel;
     Label3: TLabel;
-    Label2: TLabel;
     Timer1: TTimer;
     ProgressBar1: TProgressBar;
     Panel1: TPanel;
     lblStatus: TLabel;
+    imgDLL: TImage;
+    imgBanco: TImage;
+    imgConfing: TImage;
+    imgIni: TImage;
     procedure Timer1Timer(Sender: TObject);
   private
+    procedure UpdateStatusTLabel(messagem: string; component:TImage);
     { Private declarations }
   public
     { Public declarations }
@@ -38,16 +41,22 @@ begin
   begin
     ProgressBar1.StepIt;
     case ProgressBar1.Position of
-      10 : lblStatus.Caption := 'Carregando dependências...';
-      25 : lblStatus.Caption := 'Conectando ao banco de dados...';
-      45 : lblStatus.Caption := 'Carregando as configurações...';
-      75 : lblStatus.Caption := 'Inicializando...';
+      10 : UpdateStatusTLabel('Carregando dependências...', imgDLL);
+      25 : UpdateStatusTLabel('Conectando ao banco de dados...', imgBanco);
+      45 : UpdateStatusTLabel('Carregando as configurações...', imgConfing);
+      75 : UpdateStatusTLabel('Inicializando...', imgIni);
     end;
   end;
 
   if ProgressBar1.Position = 100 then
     close;
 
+end;
+
+procedure TformSplash.UpdateStatusTLabel(messagem: string; component: TImage);
+begin
+  lblStatus.Caption := messagem;
+  component.Visible := true;
 end;
 
 end.
