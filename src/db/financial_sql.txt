@@ -1,0 +1,28 @@
+CREATE DATABASE financial;
+
+CREATE TABLE financial.usuarios(
+	id INT PRIMARY KEY,
+	nome VARCHAR(150),
+	login VARCHAR(100),
+	senha VARCHAR(100),
+	status CHAR(1),
+	data_cadastro DATE
+);
+
+CREATE TABLE financial.caixa(
+	id INT PRIMARY KEY,
+	numero_doc VARCHAR(50),
+	descricao VARCHAR(200),
+	valor DECIMAL(18, 2),
+	tipo CHAR(1),
+	data_cadastro DATE
+);
+
+CREATE TABLE financial.contas_pagar(
+	id INT PRIMARY KEY,
+	descricao VARCHAR(200),
+	parcelas INTEGER,
+	valor DECIMAL(18, 2),
+	tipo CHAR(1),
+	data_cadastro DATE
+);
