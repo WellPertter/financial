@@ -1,4 +1,4 @@
-object frmMainPrincipal: TfrmMainPrincipal
+object formMainPrincipal: TformMainPrincipal
   Left = 0
   Top = 0
   Caption = '.: Menu Principal :.'
@@ -23,7 +23,7 @@ object frmMainPrincipal: TfrmMainPrincipal
     object Cadastro1: TMenuItem
       Caption = 'Cadastro'
       object CadastroPadro1: TMenuItem
-        Caption = 'Cadastro Padr'#227'o'
+        Caption = 'Cadastro Usu'#225'rios'
         OnClick = CadastroPadro1Click
       end
     end

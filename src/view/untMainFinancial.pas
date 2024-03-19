@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
 
 type
-  TfrmMainPrincipal = class(TForm)
+  TformMainPrincipal = class(TForm)
     MainMenu1: TMainMenu;
     Cadastro1: TMenuItem;
     Relatrios1: TMenuItem;
@@ -22,24 +22,24 @@ type
   end;
 
 var
-  frmMainPrincipal: TfrmMainPrincipal;
+  formMainPrincipal: TformMainPrincipal;
 
 implementation
 
 uses
-  untCadastroPadrao, untSplash;
+  untCadastroPadrao, untSplash, untUsuarios;
 
 {$R *.dfm}
 
 
-procedure TfrmMainPrincipal.CadastroPadro1Click(Sender: TObject);
+procedure TformMainPrincipal.CadastroPadro1Click(Sender: TObject);
 begin
-
-  formCadastro.show;
+  formUsuarios.Show;
+  //formCadastro.show;
   //formCadastro.pnlPrincipal.activeCard := CardPesquisa;
 end;
 
-procedure TfrmMainPrincipal.FormCreate(Sender: TObject);
+procedure TformMainPrincipal.FormCreate(Sender: TObject);
 begin
 
   // Sistema para login. deixando obrigatório a tela.
