@@ -1,28 +1,67 @@
-CREATE DATABASE financial;
+CREATE DATABASE IF NOT EXISTS financial;
 
-CREATE TABLE financial.usuarios(
-	id INT PRIMARY KEY,
-	nome VARCHAR(150),
-	login VARCHAR(100),
-	senha VARCHAR(100),
-	status CHAR(1),
-	data_cadastro DATE
+CREATE TABLE IF NOT EXISTS financial.usuarios(
+    id INT PRIMARY KEY,
+    nome VARCHAR(150),
+    login VARCHAR(100),
+    senha VARCHAR(100),
+    status CHAR(1),
+    data_cadastro DATE
 );
 
-CREATE TABLE financial.caixa(
-	id INT PRIMARY KEY,
-	numero_doc VARCHAR(50),
-	descricao VARCHAR(200),
-	valor DECIMAL(18, 2),
-	tipo CHAR(1),
-	data_cadastro DATE
+CREATE TABLE IF NOT EXISTS financial.caixa(
+    id INT PRIMARY KEY,
+    numero_doc VARCHAR(50),
+    descricao VARCHAR(200),
+    valor DECIMAL(18, 2),
+    tipo CHAR(1),
+    data_cadastro DATE
 );
 
-CREATE TABLE financial.contas_pagar(
-	id INT PRIMARY KEY,
-	descricao VARCHAR(200),
-	parcelas INTEGER,
-	valor DECIMAL(18, 2),
-	tipo CHAR(1),
-	data_cadastro DATE
+CREATE TABLE IF NOT EXISTS financial.contas_pagar(
+    id INT PRIMARY KEY,
+    numero_doc VARCHAR(50),
+    descricao VARCHAR(200),
+    parcelas INTEGER,
+    valor_parcela DECIMAL(18, 2),
+    valor_compra DECIMAL(18, 2),
+    valor_abatido DECIMAL(18, 2),
+    data_compra DATE,
+    data_cadastro DATE,
+    data_vencimento DATE,
+    data_pagamento DATE,
+    status CHAR(1)
+);
+
+CREATE TABLE IF NOT EXISTS financial.contas_receber(
+    id INT PRIMARY KEY,
+    numero_doc VARCHAR(50),
+    descricao VARCHAR(200),
+    parcelas INTEGER,
+    valor_parcela DECIMAL(18, 2),
+    valor_venda DECIMAL(18, 2),
+    valor_abatido DECIMAL(18, 2),
+    data_compra DATE,
+    data_cadastro DATE,
+    data_vencimento DATE,
+    data_recebimento DATE,
+    status CHAR(1)
+);
+
+CREATE TABLE IF NOT EXISTS financial.contas_pagar_detalhes(
+    id INT PRIMARY KEY,
+    id_conta_pagar INTEGER,
+    detalhes VARCHAR(250) NOT NULL,
+    valor DECIMAL(18, 2),
+    data DATE,
+    usuario VARCHAR(250)
+);
+
+CREATE TABLE IF NOT EXISTS financial.contas_receber_detalhes(
+    id INT PRIMARY KEY,
+    id_conta_receber INTEGER,
+    detalhes VARCHAR(250) NOT NULL,
+    valor DECIMAL(18, 2),
+    data DATE,
+    usuario VARCHAR(250)
 );
