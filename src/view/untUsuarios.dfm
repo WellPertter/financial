@@ -53,7 +53,7 @@ inherited formUsuarios: TformUsuarios
     end
   end
   object DataSource1: TDataSource
-    DataSet = DMprincipal.QryUsuarios
+    DataSet = DMusuarios.QryUsuarios
     Left = 552
     Top = 216
   end

@@ -6,7 +6,8 @@ uses
   untCadastroPadrao in '..\view\untCadastroPadrao.pas' {formCadastro},
   untSplash in '..\view\untSplash.pas' {formSplash},
   untDataModelConnection in '..\model\untDataModelConnection.pas' {DMprincipal: TDataModule},
-  untUsuarios in '..\view\untUsuarios.pas' {formUsuarios};
+  untUsuarios in '..\view\untUsuarios.pas' {formUsuarios},
+  untDataModelUsuarios in '..\model\untDataModelUsuarios.pas' {DMusuarios: TDataModule};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   Application.CreateForm(TformCadastro, formCadastro);
   Application.CreateForm(TformSplash, formSplash);
   Application.CreateForm(TformUsuarios, formUsuarios);
+  Application.CreateForm(TDMusuarios, DMusuarios);
   Application.Run;
 end.

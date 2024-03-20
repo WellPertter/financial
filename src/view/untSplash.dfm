@@ -30,10 +30,6 @@ object formSplash: TformSplash
     Color = clHotLight
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 5
-    ExplicitTop = 5
-    ExplicitWidth = 657
-    ExplicitHeight = 348
     object imgLogin: TImage
       AlignWithMargins = True
       Left = 3
@@ -622,8 +618,6 @@ object formSplash: TformSplash
       Align = alBottom
       Step = 1
       TabOrder = 0
-      ExplicitTop = 331
-      ExplicitWidth = 657
     end
     object Panel1: TPanel
       Left = 0
@@ -634,8 +628,6 @@ object formSplash: TformSplash
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitTop = 304
-      ExplicitWidth = 657
       object lblStatus: TLabel
         Left = 0
         Top = 0

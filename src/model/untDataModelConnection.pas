@@ -13,7 +13,6 @@ uses
 type
   TDMprincipal = class(TDataModule)
     FDConexao: TFDConnection;
-    QryUsuarios: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     const ARQUIVO_CONFING = 'Financial.cfg';

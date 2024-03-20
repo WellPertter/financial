@@ -23,14 +23,14 @@ var
 
 implementation
 
-uses untDataModelConnection;
+uses untDataModelUsuarios;
 
 {$R *.dfm}
 
 procedure TformUsuarios.btnPesquisarClick(Sender: TObject);
 begin
   inherited;
-  DMprincipal.QryUsuarios.Open;
+  DMusuarios.QryUsuarios.Open;
 end;
 
 end.
