@@ -14,6 +14,18 @@ type
     QryUsuarios: TFDQuery;
     cdsUsuarios: TClientDataSet;
     dsUsuarios: TDataSetProvider;
+    QryUsuariosid: TIntegerField;
+    QryUsuariosnome: TStringField;
+    QryUsuarioslogin: TStringField;
+    QryUsuariossenha: TStringField;
+    QryUsuariosstatus: TStringField;
+    QryUsuariosdata_cadastro: TDateField;
+    cdsUsuariosid: TIntegerField;
+    cdsUsuariosnome: TStringField;
+    cdsUsuarioslogin: TStringField;
+    cdsUsuariossenha: TStringField;
+    cdsUsuariosstatus: TStringField;
+    cdsUsuariosdata_cadastro: TDateField;
   private
     { Private declarations }
   public
