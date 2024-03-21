@@ -26,6 +26,8 @@ type
     cdsUsuariossenha: TStringField;
     cdsUsuariosstatus: TStringField;
     cdsUsuariosdata_cadastro: TDateField;
+
+    function GetLoginCadastrado(login: string): Boolean;
   private
     { Private declarations }
   public
@@ -42,5 +44,29 @@ uses untDataModelConnection;
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+
+{ TDMusuarios }
+
+function TDMusuarios.GetLoginCadastrado(login: string): Boolean;
+var
+  SQLConsulta : TFDQuery;
+begin
+  Result := True;
+  SQLConsulta := TFDQuery.Create(nil);
+  try
+    SQLConsulta.Connection := DMprincipal.FDConexao;
+    SQLConsulta.SQL.Clear;
+    SQLConsulta.SQL.Add('select id from usuarios where login = :login');
+    SQLConsulta.ParamByName('login').AsString := login;
+    SQLConsulta.open;
+
+    if SQLConsulta.RecordCount = 0 then
+      Result := False;
+  finally
+    SQLConsulta.Close;
+    FreeAndNil(SQLConsulta);
+  end;
+end;
 
 end.

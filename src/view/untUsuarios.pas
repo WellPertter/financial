@@ -24,6 +24,10 @@ type
     procedure btnAdicionarClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+
+    procedure clearComponent;
+    procedure btnExcluirClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     tipo: string;
@@ -36,7 +40,7 @@ var
 
 implementation
 
-uses untDataModelUsuarios;
+uses untDataModelUsuarios, untUtilitarios;
 
 {$R *.dfm}
 
@@ -45,11 +49,7 @@ begin
   inherited;
   //pnlPrincipal.activeCard := CardCadastro;
   tipo           := 'I';
-
-  edtNome.Text   := '';
-  edtLogin.Text  := '';
-  edtSenha.Text  := '';
-  TSstatus.State := tssOn
+  clearComponent;
 end;
 
 procedure TformUsuarios.btnAlterarClick(Sender: TObject);
@@ -66,12 +66,24 @@ begin
     TSstatus.State := tssOn
   else
     TSstatus.State := tssOff;
+
+end;
+
+procedure TformUsuarios.btnExcluirClick(Sender: TObject);
+begin
+  inherited;
+  if MessageDlg('Você deseja realmente excluir o registro?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    DMusuarios.cdsUsuarios.Delete;
+    DMusuarios.cdsUsuarios.ApplyUpdates(0);
+    ShowMessage('Deletado com sucesso!');
+  end;
 end;
 
 procedure TformUsuarios.btnPesquisarClick(Sender: TObject);
 begin
   inherited;
-  //DMusuarios.QryUsuarios.Open;
+
   DMusuarios.cdsUsuarios.Close;
   DMusuarios.cdsUsuarios.CommandText := 'select * from usuarios where nome like ' + QuotedStr('%' + edtPesquisa.Text + '%') + ' order by nome';
   DMusuarios.cdsUsuarios.Open;
@@ -92,8 +104,10 @@ end;
 
 procedure TformUsuarios.Button5Click(Sender: TObject);
 var
-  status: string;
+  status : string;
+  Utilitario : TUtilitario;
 begin
+  Utilitario := TUtilitario.Create;
   status := 'A';
 
   if Trim(edtNome.Text) = '' then
@@ -115,13 +129,24 @@ begin
     Abort;
   end;
 
+  if DMusuarios.GetLoginCadastrado(Trim(edtLogin.text)) then
+  begin
+    edtLogin.SetFocus;
+    ShowMessage('O LOGIN já tem cadastro!');
+    Abort;
+  end;
+
   if TSstatus.State = tssOff then
     status := 'B';
 
   if tipo = 'A' then
     DMusuarios.cdsUsuarios.Edit
   else
+  begin
     DMusuarios.cdsUsuarios.Insert;
+    DMusuarios.cdsUsuariosid.AsInteger         := Utilitario.GetID;
+    DMusuarios.cdsUsuariosdata_cadastro.value := Now;
+  end;
 
   DMusuarios.cdsUsuariosnome.AsString   := Trim(edtNome.Text);
   DMusuarios.cdsUsuarioslogin.AsString  := Trim(edtLogin.Text);
@@ -134,6 +159,21 @@ begin
   inherited;
 end;
 
+procedure TformUsuarios.clearComponent;
+var
+  count: integer;
+begin
+  for count := 0 to Pred(ComponentCount) do
+  begin
+    if Components[count] is TCustomEdit then
+    begin
+      TCustomEdit(Components[count]).clear;
+    end
+    else if Components[count] is TToggleSwitch then
+      TToggleSwitch(Components[count]).State := tssOn;
+  end;
+end;
+
 procedure TformUsuarios.edtPesquisaKeyPress(Sender: TObject; var Key: Char);
 begin
   inherited;
@@ -142,6 +182,12 @@ begin
     btnPesquisarClick(nil);
     Key := #0;
   end;
+end;
+
+procedure TformUsuarios.FormShow(Sender: TObject);
+begin
+  inherited;
+  btnPesquisarClick(nil);
 end;
 
 end.

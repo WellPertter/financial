@@ -37,7 +37,7 @@ implementation
 
 procedure TformSplash.Timer1Timer(Sender: TObject);
 begin
-close;
+//close;
   if ProgressBar1.Position < 100 then
   begin
     ProgressBar1.StepIt;

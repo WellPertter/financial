@@ -7,7 +7,8 @@ uses
   untSplash in '..\view\untSplash.pas' {formSplash},
   untDataModelConnection in '..\model\untDataModelConnection.pas' {DMprincipal: TDataModule},
   untUsuarios in '..\view\untUsuarios.pas' {formUsuarios},
-  untDataModelUsuarios in '..\model\untDataModelUsuarios.pas' {DMusuarios: TDataModule};
+  untDataModelUsuarios in '..\model\untDataModelUsuarios.pas' {DMusuarios: TDataModule},
+  untUtilitarios in '..\util\untUtilitarios.pas';
 
 {$R *.res}
 

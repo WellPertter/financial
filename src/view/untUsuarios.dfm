@@ -4,7 +4,6 @@ inherited formUsuarios: TformUsuarios
   TextHeight = 13
   inherited pnlPrincipal: TCardPanel
     inherited CardCadastro: TCard
-      ExplicitLeft = -31
       object Label2: TLabel [0]
         Left = 22
         Top = 22
@@ -108,30 +107,40 @@ inherited formUsuarios: TformUsuarios
     end
     inherited CardPesquisa: TCard
       inherited pnlPesquisa: TPanel
-        ExplicitLeft = -1
-        ExplicitTop = -6
         inherited edtPesquisa: TEdit
           OnKeyPress = edtPesquisaKeyPress
         end
         inherited btnPesquisar: TButton
           OnClick = btnPesquisarClick
-          ExplicitTop = -6
         end
       end
       inherited pnlButtom: TPanel
         inherited btnExcluir: TButton
-          ExplicitLeft = 209
+          Enabled = False
+          OnClick = btnExcluirClick
+        end
+        inherited btnAdicionar: TButton
+          ExplicitLeft = -5
           ExplicitTop = 6
+        end
+        inherited btnAlterar: TButton
+          Enabled = False
         end
       end
       inherited pnlMain: TPanel
         inherited DBGrid1: TDBGrid
           DataSource = dsDbgrid
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           Columns = <
             item
               Expanded = False
               FieldName = 'nome'
               Title.Caption = 'Nome'
+              Title.Font.Charset = DEFAULT_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -11
+              Title.Font.Name = 'Tahoma'
+              Title.Font.Style = [fsBold]
               Width = 130
               Visible = True
             end
@@ -139,6 +148,11 @@ inherited formUsuarios: TformUsuarios
               Expanded = False
               FieldName = 'login'
               Title.Caption = 'Login'
+              Title.Font.Charset = DEFAULT_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -11
+              Title.Font.Name = 'Tahoma'
+              Title.Font.Style = [fsBold]
               Width = 211
               Visible = True
             end
@@ -146,6 +160,11 @@ inherited formUsuarios: TformUsuarios
               Expanded = False
               FieldName = 'status'
               Title.Caption = 'Status atual'
+              Title.Font.Charset = DEFAULT_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -11
+              Title.Font.Name = 'Tahoma'
+              Title.Font.Style = [fsBold]
               Width = 235
               Visible = True
             end
@@ -153,13 +172,12 @@ inherited formUsuarios: TformUsuarios
               Expanded = False
               FieldName = 'data_cadastro'
               Title.Caption = 'Data de Cadastro'
+              Title.Font.Charset = DEFAULT_CHARSET
+              Title.Font.Color = clWindowText
+              Title.Font.Height = -11
+              Title.Font.Name = 'Tahoma'
+              Title.Font.Style = [fsBold]
               Width = 171
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'id'
-              Width = 20
               Visible = True
             end>
         end

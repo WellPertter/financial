@@ -33,7 +33,6 @@ object DMusuarios: TDMusuarios
     end
   end
   object cdsUsuarios: TClientDataSet
-    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dsUsuarios'
