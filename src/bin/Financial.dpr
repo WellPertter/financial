@@ -8,7 +8,8 @@ uses
   untDataModelConnection in '..\model\untDataModelConnection.pas' {DMprincipal: TDataModule},
   untUsuarios in '..\view\untUsuarios.pas' {formUsuarios},
   untDataModelUsuarios in '..\model\untDataModelUsuarios.pas' {DMusuarios: TDataModule},
-  untUtilitarios in '..\util\untUtilitarios.pas';
+  untUtilitarios in '..\util\untUtilitarios.pas',
+  untLogin in '..\view\untLogin.pas' {formLogin};
 
 {$R *.res}
 
@@ -16,10 +17,9 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDMprincipal, DMprincipal);
+  Application.CreateForm(TDMusuarios, DMusuarios);
   Application.CreateForm(TformMainPrincipal, formMainPrincipal);
   Application.CreateForm(TformCadastro, formCadastro);
-  Application.CreateForm(TformSplash, formSplash);
   Application.CreateForm(TformUsuarios, formUsuarios);
-  Application.CreateForm(TDMusuarios, DMusuarios);
   Application.Run;
 end.

@@ -17,6 +17,20 @@ object formMainPrincipal: TformMainPrincipal
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 467
+    Width = 873
+    Height = 19
+    Panels = <
+      item
+        Width = 322
+      end
+      item
+        Width = 100
+      end>
+    ExplicitWidth = 100
+  end
   object MainMenu1: TMainMenu
     Left = 33
     Top = 16
@@ -33,5 +47,10 @@ object formMainPrincipal: TformMainPrincipal
     object Ajuda1: TMenuItem
       Caption = 'Ajuda'
     end
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 432
+    Top = 256
   end
 end

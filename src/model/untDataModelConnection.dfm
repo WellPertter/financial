@@ -7,6 +7,7 @@ object DMprincipal: TDMprincipal
     Params.Strings = (
       'Database=..\db\Financial'
       'DriverID=SQLite')
+    Connected = True
     Left = 32
     Top = 24
   end

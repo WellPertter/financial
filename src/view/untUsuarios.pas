@@ -28,6 +28,7 @@ type
     procedure clearComponent;
     procedure btnExcluirClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
     tipo: string;
@@ -172,6 +173,12 @@ begin
     else if Components[count] is TToggleSwitch then
       TToggleSwitch(Components[count]).State := tssOn;
   end;
+end;
+
+procedure TformUsuarios.DBGrid1CellClick(Column: TColumn);
+begin
+  inherited;
+  btnAlterarClick(nil);
 end;
 
 procedure TformUsuarios.edtPesquisaKeyPress(Sender: TObject; var Key: Char);

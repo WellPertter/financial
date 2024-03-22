@@ -74,12 +74,14 @@ inherited formUsuarios: TformUsuarios
         Top = 168
         Width = 211
         Height = 27
+        HelpType = htKeyword
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        PasswordChar = '*'
         TabOrder = 3
       end
       object edtLogin: TEdit
@@ -87,6 +89,7 @@ inherited formUsuarios: TformUsuarios
         Top = 108
         Width = 312
         Height = 27
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -119,10 +122,6 @@ inherited formUsuarios: TformUsuarios
           Enabled = False
           OnClick = btnExcluirClick
         end
-        inherited btnAdicionar: TButton
-          ExplicitLeft = -5
-          ExplicitTop = 6
-        end
         inherited btnAlterar: TButton
           Enabled = False
         end
@@ -131,6 +130,7 @@ inherited formUsuarios: TformUsuarios
         inherited DBGrid1: TDBGrid
           DataSource = dsDbgrid
           Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          OnCellClick = DBGrid1CellClick
           Columns = <
             item
               Expanded = False
