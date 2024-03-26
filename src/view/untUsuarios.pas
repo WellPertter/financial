@@ -130,7 +130,7 @@ begin
     Abort;
   end;
 
-  if DMusuarios.GetLoginCadastrado(Trim(edtLogin.text)) then
+  if DMusuarios.GetLoginCadastrado(Trim(edtLogin.text)) and (tipo <> 'A') then
   begin
     edtLogin.SetFocus;
     ShowMessage('O LOGIN já tem cadastro!');
@@ -177,7 +177,7 @@ end;
 
 procedure TformUsuarios.DBGrid1CellClick(Column: TColumn);
 begin
-  inherited;
+  //herited;
   btnAlterarClick(nil);
 end;
 

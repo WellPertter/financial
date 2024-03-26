@@ -3,6 +3,7 @@ inherited formUsuarios: TformUsuarios
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlPrincipal: TCardPanel
+    ActiveCard = CardCadastro
     inherited CardCadastro: TCard
       object Label2: TLabel [0]
         Left = 22
